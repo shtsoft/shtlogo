@@ -1,0 +1,97 @@
+\documentclass[tikz]{standalone}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{fadings}
+
+\begin{document}
+
+\newcommand{\shtdraw}{\draw[path fading=south, ultra thick, color=white, opacity=0.5]}
+\definecolor{shtcolor}{RGB}{40,40,40}
+
+\begin{tikzpicture}[scale=0.25]
+  % background
+  \fill[color=shtcolor] (0, 6) ellipse [x radius=30, y radius=30];
+
+  % belly
+  \shtdraw (0, -10) circle [radius=0.25];
+  \shtdraw (0, 3) .. controls (0, -3) .. (1, -6);
+  \shtdraw (-5, -8) .. controls (2, -6) .. (5, -7);
+
+  % breast
+  \shtdraw (-1.25, 9) .. controls (0, 8.5) .. (1.25, 9);
+  \shtdraw (-2, 7) .. controls (0, 6.5) .. (2, 7);
+
+  % right neck
+  \shtdraw (-2, 15) -- (-3, 19);
+  \shtdraw (-4, 16) -- (-3.5, 17);
+  \shtdraw (-8, 16) .. controls (-7, 17) .. (-4.5, 18);
+
+  % left neck
+  \shtdraw (2, 15) -- (3, 19);
+  \shtdraw (4, 16) -- (3.5, 17);
+  \shtdraw (8, 16) .. controls (7, 17) .. (4.5, 18);
+
+  % right breast
+  \shtdraw[color=red, opacity=1.0] (-7, 7) ellipse [x radius=0.5, y radius=0.3, rotate=-30];
+  \shtdraw (-14, 13) .. controls (-8, 7) .. (-6, 5);
+  \shtdraw (-8, 13.5) .. controls (-6, 14) .. (-3.5, 15);
+  \shtdraw (-10, 13) .. controls (-7, 12) .. (-2, 11.5);
+  \shtdraw (-6.5, 6.5) .. controls (-5, 5.25) .. (-2, 5.75);
+
+  % left breast
+  \shtdraw[color=red, opacity=1.0] (7, 7) ellipse [x radius=0.5, y radius=0.3, rotate=30];
+  \shtdraw (14, 13) .. controls (8, 7) .. (6, 5);
+  \shtdraw (8, 13.5) .. controls (6, 14) .. (3.5, 15);
+  \shtdraw (10, 13) .. controls (7, 12) .. (2, 11.5);
+  \shtdraw (6.5, 6.5) .. controls (5, 5.25) .. (2, 5.75);
+
+  % right arm
+  \shtdraw (-25, 12) .. controls (-20, 10) and (-15, 11) .. (-13, 12);
+  \shtdraw (-15, 17) .. controls (-10, 18) .. (-7, 15);
+  \shtdraw (-24, 18) .. controls (-19, 19) .. (-14, 16);
+  \shtdraw (-26, 15) .. controls (-24, 15.5) .. (-19, 14);
+  \shtdraw (-27, 14) .. controls (-25, 13.5) .. (-22, 14);
+  \shtdraw (-23, 22) .. controls (-25, 20) .. (-26, 17);
+
+  % left arm
+  \shtdraw (25, 12) .. controls (20, 10) and (15, 11) .. (13, 12);
+  \shtdraw (15, 17) .. controls (10, 18) .. (7, 15);
+  \shtdraw (24, 18) .. controls (19, 19) .. (14, 16);
+  \shtdraw (26, 15) .. controls (24, 15.5) .. (19, 14);
+  \shtdraw (27, 14) .. controls (25, 13.5) .. (22, 14);
+  \shtdraw (23, 22) .. controls (25, 20) .. (26, 17);
+
+  % right belly
+  \shtdraw (-14, 11) .. controls (-12, 8) .. (-11, 7);
+  \shtdraw (-11, 10) .. controls (-11, 3) .. (-9, -9.5);
+  \shtdraw (-9, 6) -- (-8, 6.5);
+  \shtdraw (-9.5, 5) -- (-8, 4.75);
+  \shtdraw (-10, 4.5) -- (-9.25, 4);
+  \shtdraw (-9, 4.5) .. controls (-6.5, 2) .. (-5.5, 1.5);
+  \shtdraw (-9.75, 3.75) .. controls (-8, 1) .. (-7, 0);
+  \shtdraw (-8, -0.5) .. controls (-7.5, -2) .. (-6.25, -2.5);
+  \shtdraw (-8.5, -3) .. controls (-7.5, -4.5) .. (-6.5, -5);
+  \shtdraw (-9, -4.5) .. controls (-7.25, -6) .. (-7, -6);
+  \shtdraw (-9, -6) -- (-8, -7.5);
+  \shtdraw (-7, 3.5) .. controls (-3.5, 2.75) .. (-2, 3);
+  \shtdraw (-5.75, -0.5) .. controls (-4, 0) .. (-2, 0);
+  \shtdraw (-5.5, -6) .. controls (-5, -3.5) .. (-1.5, -3);
+
+  % left belly
+  \shtdraw (14, 11) .. controls (12, 8) .. (11, 7);
+  \shtdraw (11, 10) .. controls (11, 3) .. (9, -9.5);
+  \shtdraw (9, 6) -- (8, 6.5);
+  \shtdraw (9.5, 5) -- (8, 4.75);
+  \shtdraw (10, 4.5) -- (9.25, 4);
+  \shtdraw (9, 4.5) .. controls (6.5, 2) .. (5.5, 1.5);
+  \shtdraw (9.75, 3.75) .. controls (8, 1) .. (7, 0);
+  \shtdraw (8, -0.5) .. controls (7.5, -2) .. (6.25, -2.5);
+  \shtdraw (8.5, -3) .. controls (7.5, -4.5) .. (6.5, -5);
+  \shtdraw (9, -4.5) .. controls (7.25, -6) .. (7, -6);
+  \shtdraw (9, -6) -- (8, -7.5);
+  \shtdraw (7, 3.5) .. controls (3.5, 2.75) .. (2, 3);
+  \shtdraw (5.75, -0.5) .. controls (4, 0) .. (2, 0);
+  \shtdraw (5.5, -6) .. controls (5, -3.5) .. (1.5, -3);
+\end{tikzpicture}
+
+\end{document}
