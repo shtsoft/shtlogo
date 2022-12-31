@@ -5,12 +5,13 @@
 
 \begin{document}
 
+\definecolor{shtdark}{RGB}{40,40,40}
+
 \newcommand{\shtdraw}{\draw[path fading=south, ultra thick, color=white, opacity=0.5]}
-\definecolor{shtcolor}{RGB}{40,40,40}
 
 \begin{tikzpicture}[scale=0.25]
   % background
-  \fill[color=shtcolor] (0, 6) ellipse [x radius=30, y radius=30];
+  \fill[color=shtdark] (0, 6) ellipse [x radius=30, y radius=30];
 
   % belly
   \shtdraw (0, -10) circle [radius=0.25];
